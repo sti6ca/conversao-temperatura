@@ -8,7 +8,7 @@ FROM node:19.4.0
 WORKDIR /app
 # copy and install dependences
 COPY package*.json ./
-RUN npm config set proxy http://127.0.0.1:3128/
+#RUN npm config set proxy http://127.0.0.1:3128/
 #RUN npm config set https-proxy http://127.0.0.1:3128/
 RUN npm install
 
