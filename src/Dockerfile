@@ -1,13 +1,13 @@
 #
-# docker build . -t jadsonjs/conversor:v1
+# docker build . -t tatosbeer/conversor-temperatura:v3
 #
 
 # download node image
-FROM node:19.4.0
+FROM node
 # create a directory for build the application
 WORKDIR /app
 # copy and install dependences
-COPY package*.json ./
+COPY ./package*.json ./
 #RUN npm config set proxy http://127.0.0.1:3128/
 #RUN npm config set https-proxy http://127.0.0.1:3128/
 RUN npm install
@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 # expose the port
-EXPOSE 8080
+#EXPOSE 8080
 
 #
 # docker container run -d -p 8080:8080 --name conversor jadsonjs/conversor:v1
